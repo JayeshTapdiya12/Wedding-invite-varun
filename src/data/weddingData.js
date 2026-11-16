@@ -1,0 +1,110 @@
+export const weddingData = {
+    groom: {
+        firstName: "Varun",
+        lastName: "Kabra",
+        fullName: "Varun Kabra",
+        parents: "Son of Smt. & Shri Kabra", // Update with parents' first names
+        monogram: "V",
+    },
+    bride: {
+        firstName: "Radhika",
+        lastName: "Rathi",
+        fullName: "Radhika Rathi",
+        parents: "Daughter of Smt. & Shri Rathi", // Update with parents' first names
+        monogram: "R",
+    },
+    hashtag: "#jabVmetR",
+    weddingDateISO: "2026-12-14T19:30:00",
+    dateRange: "13th & 14th December 2026",
+    city: "Indore, Madhya Pradesh", // Update venue city if needed
+    blessingQuote: "॥ श्री गणेशाय नमः ॥",
+    inviteMessage:
+        "With the blessings of the Almighty and our beloved elders, the Kabra & Rathi families cordially solicit your gracious presence at the royal union of",
+    events: [
+        {
+            id: "mehendi",
+            day: "Day One • Sunday",
+            date: "December 13, 2026",
+            title: "Mehendi & Haldi Utsav",
+            time: "11:00 AM Onwards",
+            venue: "The Heritage Courtyard",
+            address: "Main Lawn, Indore",
+            theme: "day",
+            dressCode: "Marigold Yellow, Sage Green & Floral Pastels",
+            swatches: [
+                { name: "Marigold", hex: "#F59E0B" },
+                { name: "Mehendi Green", hex: "#15803D" },
+                { name: "Ivory Silk", hex: "#FDE68A" },
+            ],
+            mapLink: "https://maps.google.com",
+        },
+        {
+            id: "sangeet",
+            day: "Day One • Sunday Night",
+            date: "December 13, 2026",
+            title: "Sangeet & Royal Mehfil",
+            time: "7:30 PM Onwards",
+            venue: "Darbar Crystal Ballroom",
+            address: "Grand Palace Hotel, Indore",
+            theme: "night",
+            dressCode: "Indo-Western Glamour, Velvet & Shimmer",
+            swatches: [
+                { name: "Royal Emerald", hex: "#064E3B" },
+                { name: "Midnight Blue", hex: "#1E1B4B" },
+                { name: "Champagne Gold", hex: "#D4AF37" },
+            ],
+            mapLink: "https://maps.google.com",
+        },
+        {
+            id: "baraat",
+            day: "Day Two • Monday",
+            date: "December 14, 2026",
+            title: "Shahi Baraat & Varmala",
+            time: "6:30 PM Onwards",
+            venue: "The Royal Palace Lawns",
+            address: "Imperial Gardens, Indore",
+            theme: "night",
+            dressCode: "Traditional Royal Ethnic, Bandhgalas & Sarees",
+            swatches: [
+                { name: "Crimson Maroon", hex: "#7F1D1D" },
+                { name: "Antique Gold", hex: "#B45309" },
+                { name: "Blush Rose", hex: "#BE185D" },
+            ],
+            mapLink: "https://maps.google.com",
+        },
+        {
+            id: "phere",
+            day: "Day Two • Auspicious Night",
+            date: "December 14, 2026",
+            title: "Pheras & Blessings",
+            time: "11:15 PM Onwards",
+            venue: "The Mandap Pavilion",
+            address: "Imperial Gardens, Indore",
+            theme: "night",
+            dressCode: "Traditional Silk & Heritage Attire",
+            swatches: [
+                { name: "Sindoor Red", hex: "#991B1B" },
+                { name: "Saffron", hex: "#D97706" },
+                { name: "Pearl Cream", hex: "#FEF3C7" },
+            ],
+            mapLink: "https://maps.google.com",
+        },
+    ],
+    familyHosts: [
+        {
+            role: "Groom's Parents",
+            names: "Smt. & Shri Kabra",
+            title: "The Pillars of Strength",
+        },
+        {
+            role: "Bride's Parents",
+            names: "Smt. & Shri Rathi",
+            title: "With Boundless Love",
+        },
+        {
+            role: "Warmly Hosted By",
+            names: "The Entire Kabra & Rathi Parivaar",
+            title: "Awaiting Your Presence",
+        },
+    ],
+};

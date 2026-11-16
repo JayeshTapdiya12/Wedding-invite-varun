@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-royal: "Cinzel Decorative", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom Gold Shimmer & Jharokha Arch Utilities */
+.gold-gradient-text {
+  background: linear-gradient(
+    135deg,
+    #b8860b 0%,
+    #f3e5ab 45%,
+    #d4af37 70%,
+    #996515 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #d4af37, #f3e5ab, #b8860b) 1;
+}
+
+.jharokha-arch {
+  border-radius: 180px 180px 16px 16px;
+}
+
+.silk-pattern {
+  background-color: #faf6f0;
+  background-image:
+    radial-gradient(#d4af37 0.6px, transparent 0.6px),
+    radial-gradient(#d4af37 0.6px, #faf6f0 0.6px);
+  background-size: 28px 28px;
+  background-position:
+    0 0,
+    14px 14px;
+}
