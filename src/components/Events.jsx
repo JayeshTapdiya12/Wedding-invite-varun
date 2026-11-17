@@ -12,18 +12,21 @@ export default function Events() {
             : weddingData.events.filter((e) => e.date.includes(selectedDay));
 
     return (
-        <section className="py-20 px-4 silk-pattern">
-            <div className="max-w-5xl mx-auto">
+        <section id="events" className="py-20 px-4 silk-pattern sm:py-28">
+            <div className="max-w-6xl mx-auto">
                 {/* Section Heading */}
                 <div className="text-center mb-12">
-                    <span className="text-xs uppercase tracking-[0.35em] text-[#8B1E2F] font-semibold">
-                        Royal Itinerary
+                    <span className="text-xs uppercase tracking-[0.35em] text-[#5E725F] font-semibold">
+                        The wedding celebrations
                     </span>
-                    <h2 className="font-royal text-3xl sm:text-5xl font-bold text-[#3D0A14] mt-2">
-                        Wedding Celebrations
+                    <h2 className="font-royal text-3xl sm:text-5xl font-medium text-[#102D27] mt-2">
+                        A celebration of everyone we love
                     </h2>
-                    <p className="font-serif italic text-lg sm:text-xl text-[#5C3A2E] mt-2">
-                        Two days of love, music, traditions, and royal festivities
+                    <p className="font-serif italic text-lg sm:text-xl text-[#4C5549] mt-2">
+                        Explore the gatherings, traditions, and joyful moments planned for these days.
+                    </p>
+                    <p className="mx-auto mt-4 max-w-2xl rounded-lg border border-[#C6A46A]/35 bg-white/70 px-4 py-3 text-xs leading-relaxed text-[#596355]">
+                        Please confirm all event times, dress guidance, addresses, and map pins with both families before sharing this invitation.
                     </p>
 
                     {/* Day Filter Tabs */}
@@ -36,9 +39,10 @@ export default function Events() {
                             <button
                                 key={tab.id}
                                 onClick={() => setSelectedDay(tab.id)}
+                                aria-pressed={selectedDay === tab.id}
                                 className={`px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all cursor-pointer ${selectedDay === tab.id
-                                        ? "bg-[#3D0A14] text-[#F3E5AB] shadow"
-                                        : "text-[#3D0A14] hover:bg-[#FAF6F0]"
+                                        ? "bg-[#1D463A] text-[#F8F3E9] shadow"
+                                        : "text-[#102D27] hover:bg-[#FAF6F0]"
                                     }`}
                             >
                                 {tab.label}
@@ -48,7 +52,7 @@ export default function Events() {
                 </div>
 
                 {/* Jharokha Event Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="event-grid">
                     {filteredEvents.map((event, index) => {
                         const isNight = event.theme === "night";
                         return (
@@ -58,24 +62,28 @@ export default function Events() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className={`jharokha-arch border-2 border-[#D4AF37]/70 pt-14 pb-8 px-6 sm:px-10 text-center shadow-xl transition-transform hover:-translate-y-1 ${isNight
-                                        ? "bg-gradient-to-b from-[#3D0A14] to-[#26050B] text-[#FAF6F0]"
-                                        : "bg-gradient-to-b from-white to-[#FDF8EE] text-[#2C1810]"
+                                className={`event-card event-card-${index + 1} jharokha-arch border-2 border-[#C6A46A]/70 pt-14 pb-8 px-6 sm:px-10 text-center transition-transform hover:-translate-y-1 ${isNight
+                                        ? "text-[#F8F3E9]"
+                                        : "text-[#242522]"
                                     }`}
                             >
                                 <span
-                                    className={`inline-block text-xs uppercase tracking-[0.25em] font-semibold mb-2 ${isNight ? "text-[#D4AF37]" : "text-[#8B1E2F]"
+                                    className={`inline-block text-xs uppercase tracking-[0.25em] font-semibold mb-2 ${isNight ? "text-[#E9DCC5]" : "text-[#5E725F]"
                                         }`}
                                 >
                                     {event.day} • {event.date}
                                 </span>
 
                                 <h3
-                                    className={`font-royal text-2xl sm:text-3xl font-bold mb-4 ${isNight ? "gold-gradient-text" : "text-[#3D0A14]"
+                                    className={`font-royal text-2xl sm:text-3xl font-medium mb-4 ${isNight ? "text-[#F8F3E9]" : "text-[#102D27]"
                                         }`}
                                 >
                                     {event.title}
                                 </h3>
+
+                                <p className={`mx-auto mb-5 max-w-sm font-serif text-base leading-relaxed ${isNight ? "text-[#F8F3E9]/80" : "text-[#4C5549]"}`}>
+                                    {event.description}
+                                </p>
 
                                 {/* Time & Venue */}
                                 <div className="space-y-2 font-serif text-lg mb-6">
@@ -129,8 +137,9 @@ export default function Events() {
                                 <a
                                     href={event.mapLink}
                                     target="_blank"
-                                    rel="noreferrer"
-                                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#B8860B] text-[#2A060D] font-semibold text-xs uppercase tracking-widest shadow-md hover:brightness-110 transition"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Open map search for ${event.venue} in ${weddingData.city}`}
+                                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#C6A46A] text-[#102D27] font-semibold text-xs uppercase tracking-widest shadow-md hover:brightness-110 transition"
                                 >
                                     <Navigation className="w-3.5 h-3.5" />
                                     View Venue Location
