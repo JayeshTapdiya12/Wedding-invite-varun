@@ -14,12 +14,127 @@ export const weddingData = {
         monogram: "R",
     },
     hashtag: "#jabVmetR",
-    weddingDateISO: "2026-12-14T19:30:00",
+    weddingDateISO: "2026-12-14T19:30:00+05:30",
     dateRange: "13th & 14th December 2026",
-    city: "Indore, Madhya Pradesh", // Update venue city if needed
+    city: "Indore, Madhya Pradesh",
     blessingQuote: "॥ श्री गणेशाय नमः ॥",
     inviteMessage:
         "With the blessings of the Almighty and our beloved elders, the Kabra & Rathi families cordially solicit your gracious presence at the royal union of",
+    story: {
+        eyebrow: "From announcement to forever",
+        heading: "Two hearts, one beautiful journey",
+        message: "Every love story is made of little moments only the two of you can tell. Add how you met, what you admire in each other, and the dreams you are excited to share.",
+        image: "/images/photo-placeholder.svg",
+        imageAlt: "Photo placeholder — add a family-approved photograph of the couple",
+        moments: [
+            { year: "A chapter in their own words", title: "Where it all began", text: "Add the real story of how Varun and Radhika first met." },
+            { year: "A memory to keep", title: "The moment it felt like home", text: "Share a genuine memory that shows their friendship, care, or shared sense of humour." },
+            { year: "A promise for the future", title: "The beginning of forever", text: "Add a personal note about the life and dreams they look forward to building together." },
+        ],
+    },
+    gallery: [
+        {
+            title: "A childhood memory",
+            category: "Childhood",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved childhood photograph",
+        },
+        {
+            title: "Growing up together",
+            category: "School & College",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved school or college photograph",
+        },
+        {
+            title: "A family celebration",
+            category: "Family",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved family photograph",
+        },
+        {
+            title: "A festive day",
+            category: "Festivals",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved festival photograph",
+        },
+        {
+            title: "A favourite getaway",
+            category: "Travel",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved travel photograph",
+        },
+        {
+            title: "The cousins & siblings",
+            category: "Siblings & Cousins",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved siblings or cousins photograph",
+        },
+        {
+            title: "A promise made",
+            category: "Engagement",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved engagement photograph",
+        },
+        {
+            title: "A moment before the big day",
+            category: "Pre-wedding",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved pre-wedding photograph",
+        },
+        {
+            title: "The wedding celebrations",
+            category: "Wedding",
+            image: "/images/photo-placeholder.svg",
+            alt: "Photo placeholder — add an approved wedding photograph",
+        },
+    ],
+    filmUrl: "",
+    filmPoster: "/images/photo-placeholder.svg",
+    rsvpPhone: "",
+    rsvpConfig: {
+        endpointUrl: "",
+    },
+    familyStories: [
+        {
+            id: "parents",
+            eyebrow: "The heart of every family",
+            heading: "Behind every beautiful beginning, there is a lifetime of love",
+            note: "Add a few words from Varun and Radhika about the love, guidance, and blessings they have received from their parents.",
+            portraits: [
+                { label: "Varun’s parents", name: "Add names and an approved family photo", image: "/images/photo-placeholder.svg", imageAlt: "Photo placeholder for Varun’s parents" },
+                { label: "Radhika’s parents", name: "Add names and an approved family photo", image: "/images/photo-placeholder.svg", imageAlt: "Photo placeholder for Radhika’s parents" },
+            ],
+        },
+        {
+            id: "siblings",
+            eyebrow: "Partners in mischief, friends for life",
+            heading: "A lifetime of inside jokes",
+            note: "Add a real sibling or cousin memory—funny, tender, or both.",
+            portraits: [
+                { label: "Varun’s siblings", name: "Add names and a favourite memory", image: "/images/photo-placeholder.svg", imageAlt: "Photo placeholder for Varun’s siblings" },
+                { label: "Radhika’s siblings", name: "Add names and a favourite memory", image: "/images/photo-placeholder.svg", imageAlt: "Photo placeholder for Radhika’s siblings" },
+            ],
+        },
+        {
+            id: "elders",
+            eyebrow: "Generations of love",
+            heading: "A lifetime of blessings",
+            note: "Add a favourite family tradition, a memory of the elders, or a blessing in their own words.",
+            portraits: [
+                { label: "Varun’s family elders", name: "Add names and an approved family photo", image: "/images/photo-placeholder.svg", imageAlt: "Photo placeholder for Varun’s family elders" },
+                { label: "Radhika’s family elders", name: "Add names and an approved family photo", image: "/images/photo-placeholder.svg", imageAlt: "Photo placeholder for Radhika’s family elders" },
+            ],
+        },
+    ],
+    closingMessage: [
+        "Two hearts found each other.",
+        "Two families came together.",
+        "Generations of love brought us here.",
+        "And a lifetime of beautiful memories awaits.",
+    ],
+    venueDetails: {
+        mapEmbedUrl: "https://maps.google.com/maps?q=Indore%2C%20Madhya%20Pradesh&output=embed",
+    },
     events: [
         {
             id: "mehendi",
@@ -29,6 +144,7 @@ export const weddingData = {
             time: "11:00 AM Onwards",
             venue: "The Heritage Courtyard",
             address: "Main Lawn, Indore",
+            description: "Add a family-approved description of this event.",
             theme: "day",
             dressCode: "Marigold Yellow, Sage Green & Floral Pastels",
             swatches: [
@@ -36,7 +152,7 @@ export const weddingData = {
                 { name: "Mehendi Green", hex: "#15803D" },
                 { name: "Ivory Silk", hex: "#FDE68A" },
             ],
-            mapLink: "https://maps.google.com",
+            mapLink: "https://www.google.com/maps/search/?api=1&query=The+Heritage+Courtyard%2C+Main+Lawn%2C+Indore",
         },
         {
             id: "sangeet",
@@ -46,6 +162,7 @@ export const weddingData = {
             time: "7:30 PM Onwards",
             venue: "Darbar Crystal Ballroom",
             address: "Grand Palace Hotel, Indore",
+            description: "Add a family-approved description of this event.",
             theme: "night",
             dressCode: "Indo-Western Glamour, Velvet & Shimmer",
             swatches: [
@@ -53,7 +170,7 @@ export const weddingData = {
                 { name: "Midnight Blue", hex: "#1E1B4B" },
                 { name: "Champagne Gold", hex: "#D4AF37" },
             ],
-            mapLink: "https://maps.google.com",
+            mapLink: "https://www.google.com/maps/search/?api=1&query=Darbar+Crystal+Ballroom%2C+Grand+Palace+Hotel%2C+Indore",
         },
         {
             id: "baraat",
@@ -63,6 +180,7 @@ export const weddingData = {
             time: "6:30 PM Onwards",
             venue: "The Royal Palace Lawns",
             address: "Imperial Gardens, Indore",
+            description: "Add a family-approved description of this event.",
             theme: "night",
             dressCode: "Traditional Royal Ethnic, Bandhgalas & Sarees",
             swatches: [
@@ -70,7 +188,7 @@ export const weddingData = {
                 { name: "Antique Gold", hex: "#B45309" },
                 { name: "Blush Rose", hex: "#BE185D" },
             ],
-            mapLink: "https://maps.google.com",
+            mapLink: "https://www.google.com/maps/search/?api=1&query=The+Royal+Palace+Lawns%2C+Imperial+Gardens%2C+Indore",
         },
         {
             id: "phere",
@@ -80,6 +198,7 @@ export const weddingData = {
             time: "11:15 PM Onwards",
             venue: "The Mandap Pavilion",
             address: "Imperial Gardens, Indore",
+            description: "Add a family-approved description of this event.",
             theme: "night",
             dressCode: "Traditional Silk & Heritage Attire",
             swatches: [
@@ -87,24 +206,30 @@ export const weddingData = {
                 { name: "Saffron", hex: "#D97706" },
                 { name: "Pearl Cream", hex: "#FEF3C7" },
             ],
-            mapLink: "https://maps.google.com",
+            mapLink: "https://www.google.com/maps/search/?api=1&query=The+Mandap+Pavilion%2C+Imperial+Gardens%2C+Indore",
         },
     ],
     familyHosts: [
         {
             role: "Groom's Parents",
-            names: "Smt. & Shri Kabra",
-            title: "The Pillars of Strength",
+            names: "Add the groom’s parents’ names",
+            title: "With love and blessings",
+            image: "/images/photo-placeholder.svg",
+            imageAlt: "Photo placeholder for the groom’s family",
         },
         {
             role: "Bride's Parents",
-            names: "Smt. & Shri Rathi",
-            title: "With Boundless Love",
+            names: "Add the bride’s parents’ names",
+            title: "With love and blessings",
+            image: "/images/photo-placeholder.svg",
+            imageAlt: "Photo placeholder for the bride’s family",
         },
         {
             role: "Warmly Hosted By",
             names: "The Entire Kabra & Rathi Parivaar",
             title: "Awaiting Your Presence",
+            image: "/images/photo-placeholder.svg",
+            imageAlt: "Photo placeholder for the Kabra and Rathi families",
         },
     ],
 };
