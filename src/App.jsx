@@ -14,15 +14,11 @@ import Closing from "./components/Closing";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [invitationOpen, setInvitationOpen] = useState(
-    () => sessionStorage.getItem("wedding-intro-seen") === "true",
-  );
+  const [invitationOpen, setInvitationOpen] = useState(false);
   const openInvitation = useCallback(() => {
-    sessionStorage.setItem("wedding-intro-seen", "true");
     setInvitationOpen(true);
   }, []);
   const replayIntro = useCallback(() => {
-    sessionStorage.removeItem("wedding-intro-seen");
     window.scrollTo({ top: 0, behavior: "smooth" });
     setInvitationOpen(false);
   }, []);
