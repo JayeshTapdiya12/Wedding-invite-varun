@@ -1,0 +1,4 @@
+.sd__bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 120; background: linear-gradient(90deg, var(--gold), var(--rose)); transform-origin: left; pointer-events: none; }
+.sd__vine { display: none; position: fixed; left: 6px; top: 12vh; height: 76vh; width: 40px; z-index: 5; color: var(--gold); opacity: .8; pointer-events: none; }
+.sd__petals { position: fixed; inset: 0; z-index: 4; pointer-events: none; opacity: .75; }
+@media (min-width: 1200px) { .sd__vine { display: block; } }

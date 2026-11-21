@@ -1,0 +1,13 @@
+.songs { background: var(--forest-deep); color: var(--ivory); }
+.songs .eyebrow { color: var(--gold); }
+.songs .h2, .songs .lead { color: var(--ivory); }
+.songs__panel { max-width: 640px; margin: 0 auto; padding: clamp(24px, 5vw, 44px); background: var(--white); color: var(--charcoal); outline: 1px solid var(--gold); outline-offset: -9px; }
+.songs__panel form { display: grid; gap: 22px; }
+.songs__row { display: grid; gap: 22px; }
+.songs__send { width: 100%; }
+.songs__left { text-align: center; font-size: .8rem; letter-spacing: .1em; color: var(--muted); margin-top: -8px; }
+.songs__msg { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; font-size: .95rem; }
+.songs__msg svg { flex: none; margin-top: 2px; }
+.songs__msg--ok { background: #E7EFE3; color: #2D4A2B; border-left: 3px solid #5E8A59; }
+.songs__msg--bad { background: #F7E3DF; color: #7A2A21; border-left: 3px solid #A33A2E; }
+@media (min-width: 640px) { .songs__row { grid-template-columns: 1fr 1fr; } }

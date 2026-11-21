@@ -1,0 +1,14 @@
+.capsule { background: var(--sand); }
+.capsule__panel { max-width: 640px; margin: 0 auto; padding: clamp(24px, 5vw, 44px); background: var(--white); outline: 1px solid rgba(214, 183, 121, .8); outline-offset: -9px; }
+.capsule__panel form { display: grid; gap: 22px; }
+.capsule__seal { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 22px; font-size: .74rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-deep); }
+.capsule__msg { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; font-size: .95rem; }
+.capsule__msg svg { flex: none; margin-top: 2px; }
+.capsule__msg--ok { background: #E7EFE3; color: #2D4A2B; border-left: 3px solid #5E8A59; }
+.capsule__msg--bad { background: #F7E3DF; color: #7A2A21; border-left: 3px solid #A33A2E; }
+.capsule__wall { display: grid; gap: 16px; max-width: 900px; margin: 0 auto; }
+.capsule__wall li { padding: 24px 26px; background: var(--white); border-left: 3px solid var(--gold); }
+.capsule__wall p { font-family: var(--serif); font-style: italic; font-size: 1.35rem; line-height: 1.45; color: var(--forest); white-space: pre-wrap; overflow-wrap: anywhere; }
+.capsule__wall cite { display: block; margin-top: 8px; font-style: normal; font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep); }
+.capsule__empty { text-align: center; color: var(--muted); font-style: italic; border-left: 0 !important; }
+@media (min-width: 800px) { .capsule__wall { grid-template-columns: 1fr 1fr; } }

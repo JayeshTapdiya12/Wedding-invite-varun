@@ -1,0 +1,3 @@
+.album { background: var(--sand); text-align: center; padding-block: clamp(72px, 10vw, 130px); }
+.album--prominent { background: var(--forest); }
+.album__cta { display: flex; justify-content: center; margin-top: -24px; }

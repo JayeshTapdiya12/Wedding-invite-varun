@@ -1,0 +1,23 @@
+.swipe { background: var(--forest-deep); overflow: hidden; }
+.sw { display: grid; justify-items: center; gap: 18px; }
+.sw__stack { position: relative; width: min(82vw, 340px); aspect-ratio: 3 / 4.2; touch-action: pan-y; }
+.sw__card { position: absolute; inset: 0; border-radius: 18px; overflow: hidden; background: #222; box-shadow: 0 24px 50px -18px rgba(0, 0, 0, .7); transition: transform .4s var(--ease), opacity .4s; }
+.sw__card img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+.sw__card--top { cursor: grab; z-index: 5; touch-action: pan-y; }
+.sw__card--top:active { cursor: grabbing; }
+.sw__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 18px; font-family: var(--serif); font-style: italic; font-size: 1.35rem; line-height: 1.2; color: #fff; background: linear-gradient(0deg, rgba(0, 0, 0, .72), transparent); }
+.sw__badge { position: absolute; top: 22px; padding: 4px 14px; font-weight: 800; font-size: 1.5rem; letter-spacing: .12em; border: 3px solid; border-radius: 8px; background: rgba(0, 0, 0, .2); }
+.sw__badge--yes { left: 18px; color: #7FE0A0; transform: rotate(-12deg); }
+.sw__badge--no { right: 18px; color: #FF8C7E; transform: rotate(12deg); }
+.sw__reply { min-height: 1.6em; font-family: var(--serif); font-style: italic; font-size: 1.3rem; color: var(--gold); text-align: center; }
+.sw__actions { display: flex; align-items: center; gap: 26px; }
+.sw__btn { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; border: 1.5px solid; transition: transform .3s var(--ease), background .3s; }
+.sw__btn:hover { transform: scale(1.1); }
+.sw__btn--no { color: #FF8C7E; border-color: rgba(255, 140, 126, .6); }
+.sw__btn--yes { color: #7FE0A0; border-color: rgba(127, 224, 160, .6); }
+.sw__btn--yes:hover { background: rgba(127, 224, 160, .14); }
+.sw__btn--no:hover { background: rgba(255, 140, 126, .14); }
+.sw__count { font-size: .75rem; letter-spacing: .2em; color: rgba(248, 244, 236, .7); min-width: 54px; text-align: center; }
+.sw__end { display: grid; justify-items: center; gap: 14px; text-align: center; max-width: 440px; min-height: 360px; align-content: center; color: var(--gold); }
+.sw__end p { font-family: var(--serif); font-style: italic; font-size: 1.5rem; line-height: 1.35; color: var(--ivory); }
+.sw__end .sw__score { font-style: normal; font-size: clamp(3.4rem, 12vw, 5.5rem); line-height: 1; color: var(--gold); }
