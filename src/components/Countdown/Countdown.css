@@ -1,0 +1,28 @@
+/* ---------- shared count units (hero + section) ---------- */
+.cu { display: flex; justify-content: center; align-items: stretch; }
+.cu__unit { position: relative; display: grid; justify-items: center; gap: 6px; padding: 0 clamp(14px, 3.4vw, 40px); }
+.cu__unit + .cu__unit::before { content: ""; position: absolute; left: 0; top: 14%; bottom: 14%; width: 1px; background: linear-gradient(transparent, var(--gold), transparent); opacity: .7; }
+.cu__num { display: inline-block; overflow: hidden; font-family: var(--serif); font-weight: 500; line-height: 1.05; font-variant-numeric: tabular-nums; min-width: 2ch; text-align: center; }
+.cu__num > span { display: inline-block; }
+.cu__label { font-size: .62rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; opacity: .85; }
+
+.cu--hero .cu__num { font-size: clamp(2rem, 6vw, 3.4rem); }
+.cu--hero .cu__label { color: var(--gold); }
+.cu--section .cu__num { font-size: clamp(3rem, 11vw, 8rem); font-weight: 400; color: var(--ivory); }
+.cu--section .cu__label { color: var(--gold); font-size: clamp(.62rem, 1.6vw, .8rem); }
+.cu--section .cu__unit { padding: 0 clamp(10px, 3.2vw, 56px); }
+
+/* ---------- section ---------- */
+.countdown { background: var(--forest); overflow: hidden; text-align: center; }
+.countdown .container { position: relative; z-index: 2; }
+.countdown__mandala { position: absolute; color: var(--gold); opacity: .13; pointer-events: none; }
+.countdown__mandala--a { width: min(80vw, 680px); left: -14%; top: -12%; animation: slowSpin 140s linear infinite; }
+.countdown__mandala--b { width: min(70vw, 560px); right: -12%; bottom: -16%; animation: slowSpin 180s linear infinite reverse; }
+.countdown__date { margin-top: clamp(28px, 5vw, 56px); font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 2.6vw, 1.6rem); color: rgba(248, 244, 236, .82); }
+.countdown__done-title { font-family: var(--serif); font-size: clamp(2.6rem, 8vw, 6rem); color: var(--gold); line-height: 1.1; margin-bottom: 16px; }
+
+@media (max-width: 420px) {
+  .cu__unit { padding: 0 9px; }
+  .cu--section .cu__num { font-size: 2.6rem; }
+  .cu__label { letter-spacing: .16em; font-size: .56rem; }
+}

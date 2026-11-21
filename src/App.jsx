@@ -1,47 +1,35 @@
-import { useCallback, useState } from "react";
-import { MotionConfig } from "framer-motion";
-import EnvelopeIntro from "./components/EnvelopeIntro";
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import Story from "./components/Story";
-import Families from "./components/Families";
-import Gallery from "./components/Gallery";
-import Film from "./components/Film";
-import Events from "./components/Events";
-import RoyalDarbar from "./components/RoyalDarbar";
-import Venue from "./components/Venue";
-import Closing from "./components/Closing";
-import Footer from "./components/Footer";
+import { useEffect, useState } from "react";
+import Intro from "./components/Intro/Intro";
+import Navbar from "./components/Navbar/Navbar";
+import MusicButton from "./components/common/MusicButton";
+import Cursor from "./components/common/Cursor";
+import ScrollDecor from "./components/common/ScrollDecor";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+import Home from "./pages/Home";
+import { weddingData } from "./data/weddingData";
+import { setMusicFile } from "./lib/sound";
 
 export default function App() {
-  const [invitationOpen, setInvitationOpen] = useState(false);
-  const openInvitation = useCallback(() => {
-    setInvitationOpen(true);
-  }, []);
-  const replayIntro = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setInvitationOpen(false);
+  const introOn = weddingData.intro.enabled;
+  const [showIntro, setShowIntro] = useState(introOn);
+  // `ready` flips when the intro starts to reveal the site, so hero entrances play while guests can see them
+  const [ready, setReady] = useState(!introOn);
+
+  useEffect(() => {
+    setMusicFile(weddingData.music.file);
   }, []);
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div className="min-h-screen w-full overflow-x-hidden">
-        <EnvelopeIntro isOpen={invitationOpen} onOpen={openInvitation} />
-
-        <main inert={!invitationOpen}>
-          <Navigation />
-          <Hero />
-          <Story />
-          <Families />
-          <Gallery />
-          <Film />
-          <Events />
-          <RoyalDarbar />
-          <Venue />
-          <Closing />
-        </main>
-        {invitationOpen && <Footer onReplay={replayIntro} />}
-      </div>
-    </MotionConfig>
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <Navbar ready={ready} />
+      <main id="main">
+        <Home ready={ready} />
+      </main>
+      <ErrorBoundary silent><ScrollDecor /></ErrorBoundary>
+      <MusicButton />
+      <Cursor />
+      {showIntro && <Intro onReveal={() => setReady(true)} onDone={() => setShowIntro(false)} />}
+    </>
   );
 }
