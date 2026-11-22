@@ -1,0 +1,8 @@
+.phero { position: relative; overflow: hidden; padding: calc(var(--nav-h) + clamp(56px, 9vw, 120px)) 0 clamp(56px, 8vw, 104px); text-align: center; background: radial-gradient(120% 120% at 50% 0%, #5A1A24 0%, var(--forest-deep) 70%); color: var(--ivory); }
+.phero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .7; }
+.phero__in { position: relative; z-index: 2; display: grid; gap: 16px; justify-items: center; }
+.phero .eyebrow { color: var(--gold); }
+.phero__hindi { font-family: var(--deva); font-size: clamp(1.1rem, 2.6vw, 1.5rem); color: var(--gold); }
+.phero__title { font-family: var(--serif); font-weight: 500; font-size: clamp(2.6rem, 8vw, 5.6rem); line-height: 1.05; color: var(--ivory); }
+.phero__divider { width: 180px; color: var(--gold); }
+.phero__lead { max-width: 56ch; color: rgba(248, 244, 236, .85); }

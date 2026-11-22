@@ -8,7 +8,7 @@ export const weddingData = {
     firstName: "Varun",
     lastName: "Kabra",
     fullName: "Varun Kabra",
-    parents: "Son of Smt. & Shri Kabra", // Update with parents' first names
+    parents: "Son of Smt. Preeti & Shri Anand Kabra",
     monogram: "V",
     hindiName: "वरुण", // shown when a guest switches the site to Hindi
   },
@@ -16,18 +16,18 @@ export const weddingData = {
     firstName: "Radhika",
     lastName: "Rathi",
     fullName: "Radhika Rathi",
-    parents: "Daughter of Smt. & Shri Rathi", // Update with parents' first names
+    parents: "Daughter of Smt. Priyanka ji & Shri Saurabh ji Rathi",
     monogram: "R",
     hindiName: "राधिका",
   },
   hashtag: "#jabVmetR",
   // "+05:30" = India Standard Time, so the countdown is right for every guest
-  weddingDateISO: "2026-12-14T19:30:00+05:30",
+  weddingDateISO: "2026-12-14T17:30:00+05:30", // Panigrahan (the wedding ceremony), 5:30 PM IST,
   dateRange: "13th & 14th December 2026",
   city: "Indore, Madhya Pradesh",
   blessingQuote: "॥ श्री गणेशाय नमः ॥",
   inviteMessage:
-    "With the blessings of the Almighty and our beloved elders, the Kabra & Rathi families cordially solicit your gracious presence at the royal union of",
+    "With the blessings of the Almighty and our beloved elders, the Kabra & Rathi families cordially solicit your gracious presence at the Parinayotsav of",
 
   // ---------- SEO / sharing (also edit the tags in index.html) ----------
   seo: {
@@ -72,55 +72,6 @@ export const weddingData = {
   // Or put your song in /public/music/ and use e.g. "/music/song.mp3"
   music: { file: "" },
 
-  // ---------- Our Story ----------
-  // Placeholder text + photos — replace with your own. layout: "split-left" | "split-right" | "wide"
-  story: {
-    eyebrow: "Our Story",
-    heading: "A Story Written in the Stars",
-    chapters: [
-      {
-        id: "met",
-        kicker: "How we met",
-        title: "A Chai, A Table, A Conversation",
-        text: "A mutual friend, a crowded café and a conversation that refused to end. Neither of them knew it yet, but that evening quietly rearranged everything that came after.",
-        image: "/photos/neer3911.jpg",
-        layout: "split-left",
-      },
-      {
-        id: "first",
-        kicker: "The first meeting",
-        title: "When Hello Became Home",
-        text: "The first meeting was supposed to be ten minutes. It lasted until the café closed. By the time they said goodbye, both were already planning the next hello.",
-        image: "/photos/neer4201.jpg",
-        layout: "split-right",
-      },
-      {
-        id: "journey",
-        kicker: "The journey together",
-        title: "Every Road, a Little Brighter",
-        text: "Late-night calls, long drives and two families slowly becoming one. Through every season, they chose each other, and every road felt a little brighter for it.",
-        image: "/photos/neer4463.jpg",
-        layout: "wide",
-      },
-      {
-        id: "proposal",
-        kicker: "The proposal",
-        title: "One Question, One Yes",
-        text: "Under a sky full of stars, with a trembling voice and a ring held tight, one question was asked. The answer came before he finished.",
-        image: "/photos/neer4912.jpg",
-        layout: "split-left",
-      },
-      {
-        id: "announce",
-        kicker: "The announcement",
-        title: "Now, We Celebrate",
-        text: "With the blessings of both families, the date is set. Two days of rituals, music and love, and we cannot imagine them without you.",
-        image: "/photos/neer4605.jpg",
-        layout: "split-right",
-      },
-    ],
-  },
-
   // ---------- Videos ----------
   // type "file"    -> put the MP4 in /public/videos and set src: "/videos/teaser.mp4"
   // type "youtube" -> youtubeId only, e.g. "dQw4w9WgXcQ"
@@ -162,28 +113,24 @@ export const weddingData = {
     eyebrow: "Venue & Location",
     heading: "Find Your Way to Our Celebration",
     name: "The Exotica",
-    address: "The Exotica, Indore, Madhya Pradesh",
-    image: "/photos/dsc00491.jpg",
+    address: "Mangliya Sadak, Bypass Road, Indore, Madhya Pradesh 453771",
+    image: "/illustrations/venue.jpg",
     // Search text for the embedded map and Get Directions. Replace with the exact venue name/address,
     // or paste a full Google Maps embed URL into mapEmbedUrl / a share link into directionsUrl.
     mapQuery: "The Exotica, Indore",
     mapEmbedUrl: "",
     directionsUrl: "https://maps.app.goo.gl/4QpY2GEMtEkKPLEM7",
-    note: "Valet parking and shuttle service will be available from the Grand Palace Hotel on both evenings.",
+    note: "",
   },
 
-  // ---------- RSVP ----------
-  // See README.md ("RSVP setup") and src/lib/rsvpApi.js for Formspree / Supabase / Firebase / Apps Script recipes.
+  // ---------- Web app connection (there is no RSVP form any more) ----------
+  // The time capsule and the "link opened" counter send to this address (see README, "Google Sheet").
+  // Leave endpoint empty and they honestly say "not sent". `whatsappNumber` is an optional fallback for the capsule.
   rsvp: {
-    eyebrow: "Kindly Respond",
-    heading: "Be a Part of Our Celebration",
-    replyBy: "Kindly reply by 20th November 2026",
     endpoint: "", // e.g. "https://formspree.io/f/xxxxxxx"
     provider: "json", // "json" | "apps-script"
     headers: {}, // extra headers, e.g. Supabase: { apikey: "...", Authorization: "Bearer ..." }
     whatsappNumber: "", // fallback if no endpoint: digits only with country code, e.g. "919876543210"
-    mealOptions: ["Vegetarian", "Jain", "No Onion / No Garlic", "Other"],
-    maxGuests: 10,
   },
 
   // ---------- Phases: the site changes by itself around the wedding ----------
@@ -211,9 +158,9 @@ export const weddingData = {
   liveStream: {
     enabled: false,
     eyebrow: "Join From Anywhere",
-    heading: "Watch the Pheras Live",
+    heading: "Watch the Wedding Live",
     note: "Cannot be there in person? Be with us, wherever you are.",
-    startISO: "2026-12-14T23:15:00+05:30",
+    startISO: "2026-12-14T17:30:00+05:30",
     youtubeId: "", // id of the YouTube live / unlisted video
   },
 
@@ -257,28 +204,14 @@ export const weddingData = {
     cards: [
       { icon: "plane", title: "By Air", text: "Devi Ahilya Bai Holkar Airport (IDR) is Indore's airport and is connected to many major cities. Pre-booked cabs make the ride into town easy." },
       { icon: "train", title: "By Train", text: "Indore Junction is the main railway station, with trains from across the country. Cabs and autos are available outside." },
-      { icon: "car", title: "By Road", text: "Valet parking and shuttle service will be available from the Grand Palace Hotel on both evenings." },
+      { icon: "car", title: "By Road", text: "The Exotica is on Mangliya Sadak, Bypass Road, Indore. Use Get Directions on the Venue page for the exact route." },
       { icon: "weather", title: "What To Pack", text: "December evenings in Indore are cool. Carry a light shawl or jacket for the late-night festivities." },
     ],
     stayHeading: "Where To Stay",
     hotels: [
-      { name: "Grand Palace Hotel", area: "Indore", note: "Hosting the Sangeet." }, // add more recommended hotels as extra lines like this one,
+      // Add hotels you recommend, like:  { name: "Hotel name", area: "Area", note: "Short note" },
     ],
     contact: { label: "Need help getting here?", name: "", phone: "" }, // phone like "+919876543210"; hidden while empty
-  },
-
-  // ---------- FAQ ----------
-  faq: {
-    eyebrow: "Good To Know",
-    heading: "Questions, Answered",
-    items: [
-      { q: "What should I wear?", a: "Each festival has a suggested colour palette. You will find the dress code on every event card. Traditional Indian or Indo-western outfits are perfect for all four events." },
-      { q: "Can I bring my family?", a: "Please add the number of guests in your RSVP so we can plan seating and food." },
-      { q: "Is there parking at the venue?", a: "Valet parking and shuttle service will be available from the Grand Palace Hotel on both evenings." },
-      { q: "Where can I stay?", a: "See the Travel & Stay section above for recommended places and how to reach Indore." },
-      { q: "Can I take photos?", a: "Please do. We would love to see the celebrations through your eyes. A shared album link will be added to this website." },
-      { q: "When should I reply?", a: "Kindly reply by 20th November 2026 using the RSVP form." },
-    ],
   },
 
   // ---------- Closing ----------
@@ -288,8 +221,8 @@ export const weddingData = {
   },
 
   familyHosts: [
-    { role: "Groom's Parents", names: "Smt. & Shri Kabra", title: "The Pillars of Strength" },
-    { role: "Bride's Parents", names: "Smt. & Shri Rathi", title: "With Boundless Love" },
+    { role: "Groom's Family", names: "Smt. Preeti & Shri Anand Kabra", title: "Parents of Varun" },
+    { role: "Bride's Family", names: "Smt. Priyanka ji & Shri Saurabh ji Rathi", title: "Parents of Radhika" },
     { role: "Warmly Hosted By", names: "The Entire Kabra & Rathi Parivaar", title: "Awaiting Your Presence" },
   ],
 };

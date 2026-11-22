@@ -13,7 +13,7 @@ const span = (e) => {
 };
 const title = (e) => `${e.title} – ${d.groom.firstName} & ${d.bride.firstName}`;
 const where = (e) => `${e.venue}, ${e.address}`;
-const about = (e) => `${e.description}\n\nDress code: ${e.dressCode}\nDirections: ${eventDirectionsUrl(e)}`;
+const about = (e) => `${e.description}${e.dressCode ? `\n\nDress code: ${e.dressCode}` : ""}\n\nDirections: ${eventDirectionsUrl(e)}`;
 
 export function googleCalendarUrl(e) {
   const [s, en] = span(e);
@@ -30,7 +30,8 @@ const fold = (line) => {
   return out;
 };
 
-export function buildICS(events) {
+export function buildICS(all) {
+  const events = all.filter((e) => e.startISO); // an event with no printed time (Toran) cannot be put in a calendar
   const stamp = utc(Date.now());
   const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Wedding Website//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", `X-WR-CALNAME:${esc(`${d.groom.firstName} & ${d.bride.firstName}'s Wedding`)}`];
   events.forEach((e) => {

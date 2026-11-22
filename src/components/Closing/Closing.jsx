@@ -5,7 +5,7 @@ import SplitText from "../common/SplitText";
 import Reveal from "../common/Reveal";
 import ShareButton from "../common/ShareButton";
 import { extrasData } from "../../data/extrasData";
-import { FloralSprig, GoldDivider, Lotus } from "../common/Ornaments";
+import { FloralSprig, GoldDivider } from "../common/Ornaments";
 import "./Closing.css";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -24,7 +24,7 @@ export default function Closing() {
 
         <div className="container closing__inner">
           <motion.div initial={{ opacity: 0, scale: 0.7 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.4, ease: EASE }}>
-            <Lotus className="closing__lotus" />
+            <img className="closing__logo" src="/logo.png" alt={`${d.hashtag} wedding logo`} width="900" height="652" loading="lazy" />
           </motion.div>
 
           <h2 className="closing__line" id="closing-line">
@@ -58,7 +58,7 @@ export default function Closing() {
       <footer className="footer">
         <p className="footer__line">{t(d.closing.footer)}</p>
         <p className="footer__tag">{d.hashtag}</p>
-        <a href="#home" className="footer__top">{t("Back to top")} ↑</a>
+        <button type="button" className="footer__top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>{t("Back to top")} ↑</button>
       </footer>
     </>
   );

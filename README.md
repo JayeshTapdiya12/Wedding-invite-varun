@@ -160,3 +160,24 @@ Song requests, capsule notes and link-open pings go to the **same web app as the
 
 ## Privacy
 Tracking stores only the personal-link name, once per visit, and only when the link has `?g=`. Mention it if guests ask. Turn it off with `tracking: { enabled: false }`.
+
+
+---
+
+# v10: pages, maroon theme, invitation details
+
+**Removed:** Our Story, Swipe game, Song requests, RSVP, FAQ and the Love map. (The Instagram-style Stories stay.)
+
+**Separate pages** (each has its own address): `/` home, `/celebrations`, `/gallery` (Moments to Remember carousel), `/stories`, `/wardrobe`, `/venue`, `/travel`, `/invitation`, `/family`, `/play`. Edit the list and tiles in `src/data/pagesData.js` and the page contents in `src/pages/pages.jsx`. `vercel.json` makes direct links work on Vercel. Guest links (`?g=`, `?lang=`) are kept when moving between pages. The router is a small built-in one (`src/lib/router.jsx`), so no extra package is needed.
+
+**Home:** hero, then the big animated countdown (moved up, with the wedding logo), couple photos, a 3D photo carousel, the days at a glance, and a tile for each page.
+
+**From the invitation PDF** (`src/data/eventsData.js`, `invitationData.js`): all 10 festivities with the times printed on the card, both families, the welcome lists and the contacts, the card itself as turnable pages plus the PDF to download. Toran has no printed time, so it has no calendar button. Event durations in the calendar are estimates. Please check the Hindi to English spelling of names (for example "Loharda").
+
+**Wardrobe Planner** (`wardrobeData.js`): Carnival, Reception, Mayra and Wedding Phere with colour swatches, plus the official planner picture to download. Swatch colours are approximate.
+
+**Privacy:** phone numbers on the Family page and inside the PDF are public once the site is live. Delete lines in `invitationData.js` (contacts) if you prefer.
+
+**Palette:** deep maroon / wine / parchment with antique gold. Change the colours in `src/styles/global.css` (`:root`).
+
+**Fixed:** headings used to lose the spaces between words ("TheRoadThatLedHere"). They now read correctly.

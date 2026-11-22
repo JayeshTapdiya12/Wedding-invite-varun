@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -30,7 +31,8 @@ export default function SplitText({ text, as = "span", className, delay = 0, sta
   return (
     <Tag className={className} variants={group(byWord ? stagger * 4 : stagger, delay)} {...trigger} aria-label={text} {...rest}>
       {text.split(" ").map((word, wi, arr) => (
-        <span key={wi} aria-hidden="true" style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+        <Fragment key={wi}>
+        <span aria-hidden="true" style={{ display: "inline-block", whiteSpace: "nowrap" }}>
           {byWord ? (
             <span style={maskStyle}>
               <motion.span variants={letter} style={{ display: "inline-block" }}>{word}</motion.span>
@@ -42,8 +44,9 @@ export default function SplitText({ text, as = "span", className, delay = 0, sta
               </span>
             ))
           )}
-          {wi < arr.length - 1 ? " " : ""}
         </span>
+        {wi < arr.length - 1 ? " " : ""}
+        </Fragment>
       ))}
     </Tag>
   );

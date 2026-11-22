@@ -1,5 +1,5 @@
 // A short confetti + message burst (used by the hidden "tap the names 5 times" surprise).
-const COLORS = ["#D6B779", "#B98279", "#89977F", "#EBD5D0", "#34483C", "#F5DFA3"];
+const COLORS = ["#D6B779", "#B98279", "#C9A6A0", "#EBD5D0", "#4A0E17", "#F5DFA3"];
 
 export function burst(message) {
   if (typeof document === "undefined") return;
@@ -11,7 +11,7 @@ export function burst(message) {
     toast.setAttribute("role", "status");
     Object.assign(toast.style, {
       position: "fixed", left: "50%", bottom: "90px", transform: "translateX(-50%)", zIndex: 600,
-      background: "#34483C", color: "#F8F4EC", padding: "14px 22px", borderRadius: "999px",
+      background: "#4A0E17", color: "#F8F4EC", padding: "14px 22px", borderRadius: "999px",
       fontFamily: "Manrope, sans-serif", fontSize: ".95rem", boxShadow: "0 12px 40px rgba(0,0,0,.3)",
       maxWidth: "90vw", textAlign: "center",
     });

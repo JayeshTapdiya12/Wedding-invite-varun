@@ -1,7 +1,7 @@
 .hero { position: relative; display: grid; min-height: 100svh; background: var(--forest-deep); color: var(--ivory); text-align: center; overflow: clip; }
 
 /* ---- photo side: clean, no text on it ---- */
-.hero__photo { position: relative; height: 50svh; min-height: 300px; overflow: hidden; background: #1c2a22; }
+.hero__photo { position: relative; height: 50svh; min-height: 300px; overflow: hidden; background: #1A0508; }
 .hero__slides { position: absolute; inset: -6% 0; }
 .hero__slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.8s ease; transform: scale(1.04); }
 .hero__slide.on { opacity: 1; animation: heroZoom 7.5s ease-out forwards; }
@@ -12,7 +12,7 @@
 .hero__dots i.on { width: 26px; border-radius: 6px; background: var(--gold); }
 
 /* ---- text panel ---- */
-.hero__panel { position: relative; overflow: hidden; display: grid; place-items: center; padding: 38px var(--gutter) 92px; background: radial-gradient(ellipse at 50% 30%, #3f5748, var(--forest-deep) 78%); }
+.hero__panel { position: relative; overflow: hidden; display: grid; place-items: center; padding: 38px var(--gutter) 92px; background: radial-gradient(ellipse at 50% 28%, var(--maroon-hero-2), var(--maroon-hero) 80%); }
 .hero__panel::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(214, 183, 121, .45); pointer-events: none; }
 .hero__sprig { position: absolute; width: clamp(80px, 13vw, 150px); color: var(--gold); opacity: .5; pointer-events: none; }
 .hero__sprig--tl { top: 22px; left: 22px; }

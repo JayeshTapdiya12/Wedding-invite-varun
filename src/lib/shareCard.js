@@ -3,8 +3,8 @@
 import { weddingData as d } from "../data/weddingData";
 
 export const FRAMES = {
-  gold:   { name: "Champagne Gold", bg: "#F8F4EC", ink: "#34483C", accent: "#D6B779" },
-  forest: { name: "Forest",         bg: "#34483C", ink: "#F8F4EC", accent: "#D6B779" },
+  gold:   { name: "Champagne Gold", bg: "#F8F4EC", ink: "#4A0E17", accent: "#D6B779" },
+  forest: { name: "Forest",         bg: "#4A0E17", ink: "#F8F4EC", accent: "#D6B779" },
   blush:  { name: "Rose Blush",     bg: "#EBD5D0", ink: "#4a2f2b", accent: "#B98279" },
 };
 

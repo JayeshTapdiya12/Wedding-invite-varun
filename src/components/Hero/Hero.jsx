@@ -4,7 +4,6 @@ import { sfxMessage } from "../../lib/sound";
 import { extrasData } from "../../data/extrasData";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Camera, MapPin } from "lucide-react";
-import { useCountdown } from "../../hooks/useCountdown";
 import { usePhase } from "../../hooks/usePhase";
 import { weddingData as d } from "../../data/weddingData";
 import { currentGuest } from "../../lib/guest";
@@ -12,7 +11,6 @@ import { useLang } from "../../i18n/LangContext";
 import SplitText from "../common/SplitText";
 import Particles from "../common/Particles";
 import { FloralSprig } from "../common/Ornaments";
-import CountUnits from "../Countdown/CountUnits";
 import "./Hero.css";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -24,7 +22,6 @@ export default function Hero({ ready }) {
   const { t, lang } = useLang();
   const phase = usePhase();
   const guest = currentGuest();
-  const time = useCountdown(d.weddingDateISO);
 
   // Photo side: a slow cross-fading slideshow. Nothing is written on the photos.
   const photos = d.heroPhotos?.length ? d.heroPhotos : [{ src: d.heroImage, pos: "50% 40%", alt: "" }];
@@ -128,8 +125,8 @@ export default function Hero({ ready }) {
           <MapPin size={15} strokeWidth={1.6} aria-hidden="true" /> {t(d.city)}
         </motion.p>
 
-        <motion.div className="hero__count" {...rise(1.95)}>
-          {phase === "after" ? (
+        {phase === "after" && (
+          <motion.div className="hero__count" {...rise(1.95)}>
             <div className="hero__after">
               <p className="hero__thanks">{t(d.phase.afterTitle)}</p>
               <p>{t(d.phase.afterText)}</p>
@@ -139,16 +136,12 @@ export default function Hero({ ready }) {
                 </a>
               )}
             </div>
-          ) : time.done ? (
-            <p className="hero__today">{t("Today is the day.")}</p>
-          ) : (
-            <CountUnits time={time} className="cu--hero" />
-          )}
-        </motion.div>
+          </motion.div>
+        )}
       </motion.div>
 
       <motion.a
-        href="#couple"
+        href={phase === "after" ? "#couple" : "#countdown"}
         className="hero__scroll"
         initial={{ opacity: 0 }}
         animate={ready ? { opacity: 1 } : { opacity: 0 }}

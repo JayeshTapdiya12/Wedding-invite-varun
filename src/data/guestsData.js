@@ -6,7 +6,7 @@
 //
 //  slug   : lowercase letters, numbers and dashes only.
 //  name   : how you want to greet them.   nameHi: optional Hindi spelling for the greeting.
-//  events : "all"  or a list of event ids from eventsData.js  ->  ["mehendi", "sangeet", "baraat", "phere"]
+//  events : "all"  or a list of event ids from eventsData.js  ->  ["vinayak", "kalash", "carnival", "sagai", "aashirwad", "mayra", "varnikasi", "toran", "panigrahan", "bhoj"]
 //  lang   : optional "hi" to open the site in Hindi for that guest.
 //
 //  The three entries below are EXAMPLES: delete them and add your own.
@@ -18,6 +18,6 @@
 
 export const guestsData = {
   "sharma-family": { name: "Sharma Family", events: "all" },
-  "mehta-ji": { name: "Mehta Ji & Family", nameHi: "मेहता जी एवं परिवार", events: ["baraat", "phere"], lang: "hi" },
-  "college-friends": { name: "Our dearest friends", events: ["mehendi", "sangeet", "baraat"] },
+  "mehta-ji": { name: "Mehta Ji & Family", nameHi: "मेहता जी एवं परिवार", events: ["varnikasi", "toran", "panigrahan", "bhoj"], lang: "hi" },
+  "college-friends": { name: "Our dearest friends", events: ["carnival", "sagai", "aashirwad"] },
 };

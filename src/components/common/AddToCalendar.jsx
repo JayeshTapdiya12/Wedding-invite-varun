@@ -5,6 +5,7 @@ import { useLang } from "../../i18n/LangContext";
 // One event: a small "Add to calendar: Google | Apple / Outlook" line.
 export function EventCalendarLinks({ event }) {
   const { t } = useLang();
+  if (!event.startISO) return null;
   return (
     <p className="cal">
       <CalendarPlus size={16} strokeWidth={1.5} aria-hidden="true" />

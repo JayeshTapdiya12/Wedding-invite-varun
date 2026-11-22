@@ -1,7 +1,7 @@
 .ps { position: relative; background: var(--forest-deep); }
 .ps__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: clip; }
 .ps__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform, opacity; }
-.ps__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(37, 53, 43, .35), transparent 35%, rgba(37, 53, 43, .8)); }
+.ps__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 9, 13, .35), transparent 35%, rgba(43, 9, 13, .8)); }
 .ps__cap { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(28px, 6vw, 70px); color: var(--ivory); display: grid; gap: 6px; }
 .ps__cap .eyebrow { color: var(--gold); }
 .ps__line { font-family: var(--serif); font-style: italic; font-size: clamp(2rem, 6vw, 4.2rem); line-height: 1.1; }

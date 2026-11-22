@@ -8,8 +8,8 @@
 .vnote__bar { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
 .vnote__bar span { flex: none; font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .vnote__bar input { flex: 1; min-width: 0; height: 24px; appearance: none; background: transparent; cursor: pointer; }
-.vnote__bar input::-webkit-slider-runnable-track { height: 3px; background: linear-gradient(90deg, var(--gold-deep) var(--p), rgba(52, 72, 60, .2) var(--p)); }
-.vnote__bar input::-moz-range-track { height: 3px; background: rgba(52, 72, 60, .2); }
+.vnote__bar input::-webkit-slider-runnable-track { height: 3px; background: linear-gradient(90deg, var(--gold-deep) var(--p), rgba(74, 14, 23, .2) var(--p)); }
+.vnote__bar input::-moz-range-track { height: 3px; background: rgba(74, 14, 23, .2); }
 .vnote__bar input::-moz-range-progress { height: 3px; background: var(--gold-deep); }
 .vnote__bar input::-webkit-slider-thumb { appearance: none; width: 14px; height: 14px; margin-top: -5.5px; border-radius: 50%; background: var(--forest); border: 0; }
 .vnote__bar input::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--forest); border: 0; }

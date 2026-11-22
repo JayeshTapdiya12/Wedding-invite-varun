@@ -1,6 +1,6 @@
 // Offline support. Pages: network first, falling back to the saved copy. Photos, scripts, styles and fonts: saved the
 // first time they load, then served instantly. Cross-origin API calls (RSVP, weather, wishes) are never touched.
-const VERSION = "v9";
+const VERSION = "v10";
 const SHELL = `vr-shell-${VERSION}`;
 const ASSETS = `vr-assets-${VERSION}`;
 

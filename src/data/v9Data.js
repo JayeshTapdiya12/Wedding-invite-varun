@@ -1,42 +1,15 @@
 // =====================================================================
-//  v9 FEATURES: stories, swipe game, love map, Indore guide, table finder, weather, song requests,
-//  time capsule, thank-you page, offline app, link tracking.
+//  EXTRA FEATURES: stories, Indore guide, table finder, weather, time capsule, thank-you page, offline app, link tracking.
 //  Everything you can edit is in this file. Anything marked SAMPLE is a placeholder: replace it.
 // =====================================================================
 
 export const v9Data = {
-  // ---------- Stories (Instagram-style, built automatically from the gallery categories) ----------
+  // ---------- Stories (Instagram-style, built automatically from the gallery categories; has its own page) ----------
   stories: {
     eyebrow: "Tap Through",
     heading: "Our Stories",
     lead: "Tap a circle and watch our story, one moment at a time.",
     secondsPerSlide: 4.5,
-  },
-
-  // ---------- Swipe game ----------
-  swipe: {
-    eyebrow: "Just For Fun",
-    heading: "Swipe Right on Us",
-    lead: "Swipe right if you love the photo. Swipe left if you... well, try it.",
-    // The photos come from the gallery (galleryData.js). `count` = how many cards.
-    count: 8,
-    finish: "Every single photo got a heart. We knew you had taste.",
-    // What happens when someone swipes left. It always turns into a heart.
-    leftReply: "Nice try. It's a heart anyway.",
-  },
-
-  // ---------- Love map (a hand-drawn route through the places that mattered) ----------
-  // A drawn story map, not a GPS map. Put the stops in order. `x`/`y` are positions inside a 400 x 620 canvas.
-  loveMap: {
-    eyebrow: "Our Route",
-    heading: "The Road That Led Here",
-    lead: "Four places in Indore that quietly became ours.",
-    stops: [
-      { x: 90, y: 70, emoji: "🎬", title: "The Cinema", text: "Front row seats, and neither of us remembers the film. We remember the popcorn and the pretending not to look.", photo: "/photos/neer4441.jpg" },
-      { x: 290, y: 220, emoji: "🌬️", title: "The Windmill Hills", text: "Long drive, strong wind, and a view that made us both go quiet. The day we knew this was something real.", photo: "/photos/neer4543.jpg" },
-      { x: 110, y: 380, emoji: "🏰", title: "Rajwada", text: "Old doors, older stories, and the first time we imagined the city as ours together.", photo: "/photos/dsc00485.jpg" },
-      { x: 280, y: 540, emoji: "🛕", title: "The River Temple", text: "Where we asked for blessings, quietly, before we asked anyone else.", photo: "/photos/neer3911.jpg" },
-    ],
   },
 
   // ---------- Teaser video at the very top (hidden while src is empty) ----------
@@ -126,16 +99,6 @@ export const v9Data = {
     packing: "Light cottons for the day, a shawl or jacket for the evenings.",
   },
 
-  // ---------- Song requests (collected like RSVPs, see README) ----------
-  songs: {
-    enabled: true,
-    eyebrow: "Your Playlist",
-    heading: "What Should We Dance To?",
-    lead: "Request a song for the Sangeet. The DJ will see every request.",
-    max: 3,
-    thanks: "Added to the playlist. Request another?",
-  },
-
   // ---------- Time capsule ----------
   // Guests write a note now. It is meant to be opened on the first anniversary.
   capsule: {
@@ -167,7 +130,7 @@ export const v9Data = {
 
   // ---------- Reminder messages (used by `npm run reminders`) ----------
   reminders: [
-    { id: "30days", daysBefore: 30, text: "Namaste {name} 🙏\nOnly 30 days to go for Varun & Radhika's wedding (13th & 14th Dec, Indore)! Please RSVP and see all the details here:\n{link}" },
+    { id: "30days", daysBefore: 30, text: "Namaste {name} 🙏\nOnly 30 days to go for Varun & Radhika's wedding (13th & 14th Dec, Indore)! See all the details here:\n{link}" },
     { id: "7days", daysBefore: 7, text: "Namaste {name} 🙏\nJust 7 days to go! Travel, stay and the weather are all on your invitation page:\n{link}" },
     { id: "1day", daysBefore: 1, text: "Namaste {name} 🙏\nTomorrow is the day! The venue, timings and directions are here:\n{link}\nCan't wait to see you." },
   ],

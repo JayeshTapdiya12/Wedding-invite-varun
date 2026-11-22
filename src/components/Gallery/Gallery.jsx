@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { galleryCategories, galleryData, galleryHeading } from "../../data/galleryData";
 import SectionHeading from "../common/SectionHeading";
+import PhotoCarousel from "../PhotoCarousel/PhotoCarousel";
 import { useLang } from "../../i18n/LangContext";
 import "./Gallery.css";
 
@@ -82,7 +83,7 @@ function Lightbox({ items, index, onClose, onGo }) {
   );
 }
 
-export default function Gallery() {
+export default function Gallery({ standalone = false }) {
   const { t } = useLang();
   const [cat, setCat] = useState(galleryCategories[0]);
   const [openAt, setOpenAt] = useState(null);
@@ -91,9 +92,9 @@ export default function Gallery() {
   const closeBox = useCallback(() => setOpenAt(null), []);
 
   return (
-    <section id="gallery" className="section gallery" aria-labelledby="gallery-title">
+    <section id="gallery" className="section gallery on-dark" aria-labelledby="gallery-title">
       <div className="container">
-        <SectionHeading eyebrow={galleryHeading.eyebrow} title={galleryHeading.heading} headingId="gallery-title" />
+        {standalone ? <h2 className="sr-only" id="gallery-title">{galleryHeading.heading}</h2> : <SectionHeading eyebrow={galleryHeading.eyebrow} title={galleryHeading.heading} headingId="gallery-title" />}
 
         <div className="gallery__tabs" role="group" aria-label="Filter photos by category">
           {galleryCategories.map((c) => (
@@ -103,23 +104,8 @@ export default function Gallery() {
           ))}
         </div>
 
-        <div className="gallery__grid" key={cat} aria-live="polite">
-          {items.map((g, i) => (
-            <motion.button
-              key={g.id}
-              className="gallery__tile"
-              style={{ aspectRatio: g.ratio }}
-              initial={{ opacity: 0, y: 36, clipPath: "inset(14% 0% 0% 0%)" }}
-              animate={{ opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)" }}
-              transition={{ duration: 0.9, delay: Math.min(i, 8) * 0.07, ease: EASE }}
-              onClick={() => setOpenAt(i)}
-              aria-label={`Open photo: ${g.caption}`}
-            >
-              <img src={g.thumb || g.src} alt={g.caption} loading="lazy" decoding="async" />
-              <span className="gallery__cap">{t(g.caption)}</span>
-            </motion.button>
-          ))}
-        </div>
+        <PhotoCarousel items={items} onOpen={setOpenAt} label={t(galleryHeading.heading)} />
+        <p className="gallery__hint">{t("Tap the centre photo to see it full size")}</p>
         {items.length === 0 && <p className="lead gallery__empty">{t("Photos for this category are coming soon.")}</p>}
       </div>
 

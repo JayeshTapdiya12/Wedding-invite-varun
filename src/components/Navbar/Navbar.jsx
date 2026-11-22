@@ -1,33 +1,23 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { weddingData as d } from "../../data/weddingData";
-import { usePhase } from "../../hooks/usePhase";
+import { pagesData } from "../../data/pagesData";
 import { useLang } from "../../i18n/LangContext";
+import { Link, useRoute } from "../../lib/router";
 import "./Navbar.css";
 
-const LINKS = [
-  ["Home", "#home"],
-  ["Our Story", "#story"],
-  ["Films", "#films"],
-  ["Gallery", "#gallery"],
-  ["Festivities", "#events"],
-  ["RSVP", "#rsvp"],
-  ["Venue & Travel", "#venue"],
-  ["FAQ", "#faq"],
-];
-
 const EASE = [0.22, 1, 0.36, 1];
+// The bar shows the main pages; the menu button opens all of them.
+const BAR = ["/celebrations", "/gallery", "/wardrobe", "/venue", "/travel", "/family"];
 
 export default function Navbar({ ready = true }) {
   const { t, lang, setLang } = useLang();
-  const phase = usePhase();
+  const { path } = useRoute();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("#home");
-
-  // after the wedding there is nothing to RSVP to and the FAQ is gone
-  const links = useMemo(() => LINKS.filter(([, h]) => !(phase === "after" && (h === "#rsvp" || h === "#faq"))), [phase]);
+  const bar = [["Home", "/"], ...pagesData.filter((p) => BAR.includes(p.path)).map((p) => [p.short || p.label, p.path])];
+  const menu = [["Home", "/"], ...pagesData.map((p) => [p.label, p.path])];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,18 +26,7 @@ export default function Navbar({ ready = true }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // highlight the section currently in view
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(`#${e.target.id}`)),
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    links.forEach(([, h]) => {
-      const el = document.getElementById(h.slice(1));
-      if (el) io.observe(el);
-    });
-    return () => io.disconnect();
-  }, [links]);
+  useEffect(() => setOpen(false), [path]);
 
   // lock page scroll + close on Escape while the mobile menu is open
   useEffect(() => {
@@ -73,15 +52,15 @@ export default function Navbar({ ready = true }) {
       transition={{ duration: 0.9, ease: EASE, delay: 0.3 }}
     >
       <div className="nav__bar">
-        <a href="#home" className="nav__logo" aria-label={`${d.groom.firstName} and ${d.bride.firstName} – home`} onClick={go}>
+        <Link to="/" className="nav__logo" aria-label={`${d.groom.firstName} and ${d.bride.firstName} – home`} onClick={go}>
           {d.groom.monogram}<span>&amp;</span>{d.bride.monogram}
-        </a>
+        </Link>
 
         <nav className="nav__links" aria-label="Primary">
-          {links.map(([label, href]) => (
-            <a key={href} href={href} className={active === href ? "is-active" : ""} aria-current={active === href ? "location" : undefined}>
+          {bar.map(([label, to]) => (
+            <Link key={to} to={to} className={path === to ? "is-active" : ""} aria-current={path === to ? "page" : undefined}>
               {t(label)}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -113,12 +92,12 @@ export default function Navbar({ ready = true }) {
           >
             <nav aria-label="Mobile">
               <ul>
-                {links.map(([label, href], i) => (
-                  <motion.li key={href} initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.6, delay: 0.25 + i * 0.05, ease: EASE }}>
-                    <a href={href} onClick={go}>
-                      <small>0{i + 1}</small>
+                {menu.map(([label, to], i) => (
+                  <motion.li key={to} initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.6, delay: 0.25 + i * 0.05, ease: EASE }}>
+                    <Link to={to} onClick={go} aria-current={path === to ? "page" : undefined}>
+                      <small>{String(i + 1).padStart(2, "0")}</small>
                       {t(label)}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>

@@ -28,3 +28,5 @@
 
 .closing__share { display: grid; gap: 10px; justify-items: center; margin-top: 18px; }
 .closing__share p { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); max-width: 34ch; }
+
+.closing__logo { width: min(70vw, 300px); height: auto; margin: 0 auto; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .4)); }

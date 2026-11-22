@@ -216,7 +216,7 @@ export function qrMatrix(text) {
   return best;
 }
 
-export function qrSvg(text, { scale = 8, margin = 4, dark = "#25352B", light = "#FFFFFF" } = {}) {
+export function qrSvg(text, { scale = 8, margin = 4, dark = "#2B090D", light = "#FFFFFF" } = {}) {
   const m = qrMatrix(text);
   const n = m.length + margin * 2;
   let path = "";

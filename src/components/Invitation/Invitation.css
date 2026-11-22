@@ -1,0 +1,15 @@
+.invite { background: var(--sand); }
+.invite__book { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; outline-offset: 8px; perspective: 1400px; }
+.invite__stage { width: min(100%, 420px); }
+.invite__page { margin: 0; background: var(--white); box-shadow: 0 30px 60px rgba(43, 9, 13, .22), 0 0 0 1px rgba(197, 160, 89, .6); touch-action: pan-y; cursor: grab; }
+.invite__page img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; user-select: none; }
+.invite__btn { flex: none; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--gold-deep); color: var(--forest); background: rgba(255, 252, 248, .9); transition: background .3s, color .3s; }
+.invite__btn:hover { background: var(--forest); color: var(--ivory); }
+.invite__label { margin-top: 22px; text-align: center; font-family: var(--serif); font-size: 1.5rem; color: var(--forest); }
+.invite__label small { margin-left: 10px; font-family: var(--sans); font-size: .75rem; letter-spacing: .14em; color: var(--muted); }
+.invite__thumbs { display: flex; gap: 10px; margin: 24px auto 0; padding: 6px 4px 12px; max-width: 100%; overflow-x: auto; justify-content: safe center; scrollbar-width: thin; }
+.invite__thumbs button { flex: none; width: 58px; padding: 0; border: 2px solid transparent; opacity: .6; transition: opacity .3s, border-color .3s; }
+.invite__thumbs button.on, .invite__thumbs button:hover { opacity: 1; border-color: var(--gold-deep); }
+.invite__thumbs img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+.invite__dl { display: flex; justify-content: center; margin-top: 20px; }
+@media (max-width: 560px) { .invite__btn { width: 40px; height: 40px; } .invite__book { gap: 4px; } }

@@ -4,9 +4,12 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { weddingData as w } from "../src/data/weddingData.js";
-import { eventsData, eventsHeading } from "../src/data/eventsData.js";
+import { dayHeadings, eventsData, eventsHeading } from "../src/data/eventsData.js";
 import { galleryData, galleryCategories, galleryHeading } from "../src/data/galleryData.js";
 import { v9Data } from "../src/data/v9Data.js";
+import * as wardrobe from "../src/data/wardrobeData.js";
+import * as invitation from "../src/data/invitationData.js";
+import { pagesData } from "../src/data/pagesData.js";
 import { hi } from "../src/i18n/hi.js";
 
 const found = new Set();
@@ -31,12 +34,9 @@ const SKIP = new Set(["emoji", "showFrom", "src", "poster", "photo", "map", "id"
 const walkV9 = (o) => { if (typeof o === "string") add(o); else if (Array.isArray(o)) o.forEach(walkV9); else if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) if (!SKIP.has(k)) walkV9(v); };
 walkV9(v9Data);
 [w.inviteMessage, w.dateRange, w.city].forEach(add);
-[w.story.eyebrow, w.story.heading].forEach(add);
-w.story.chapters.forEach((c) => [c.kicker, c.title, c.text].forEach(add));
 Object.values(w.videoSection).forEach(add);
 w.videos.forEach((v) => [v.title, v.kind].forEach(add));
 [w.venue.eyebrow, w.venue.heading, w.venue.note].forEach(add);
-[w.rsvp.eyebrow, w.rsvp.heading, w.rsvp.replyBy, ...w.rsvp.mealOptions].forEach(add);
 [w.closing.line, w.closing.footer].forEach(add);
 w.familyHosts.forEach((h) => [h.role, h.names, h.title].forEach(add));
 [w.phase.afterTitle, w.phase.afterText, w.voiceNote.title, w.voiceNote.caption].forEach(add);
@@ -46,10 +46,15 @@ w.familyHosts.forEach((h) => [h.role, h.names, h.title].forEach(add));
 [w.travel.eyebrow, w.travel.heading, w.travel.intro, w.travel.stayHeading, w.travel.contact.label].forEach(add);
 w.travel.cards.forEach((c) => [c.title, c.text].forEach(add));
 w.travel.hotels.forEach((h) => add(h.note));
-[w.faq.eyebrow, w.faq.heading].forEach(add);
-w.faq.items.forEach((i) => [i.q, i.a].forEach(add));
 Object.values(eventsHeading).forEach(add);
-eventsData.forEach((e) => [e.day, e.date, e.time, e.title, e.description, e.dressCode, e.short].forEach(add));
+// events, wardrobe, invitation, pages: every visible string (skips ids, links, pictures, phone numbers, Hindi text and names)
+const SKIP2 = new Set(["id", "day", "event", "src", "image", "photo", "pos", "startISO", "durationMin", "phone", "shown", "hindi", "name", "numeral", "venue", "address", "illustration", "mapLink", "path", "alt"]);
+const walkAll = (o) => { if (typeof o === "string") { if (!/^#|^\/|^\d|[ऀ-ॿ]/.test(o)) add(o); } else if (Array.isArray(o)) o.forEach(walkAll); else if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) if (!SKIP2.has(k)) walkAll(v); };
+walkAll(eventsData); walkAll(dayHeadings);
+walkAll(wardrobe.wardrobeCards); walkAll(wardrobe.wardrobeHeading); walkAll(wardrobe.wardrobePoster);
+walkAll(invitation.invitationHeading); walkAll(invitation.invitationPages); walkAll(invitation.families); walkAll(invitation.familiesHeading); walkAll(invitation.contactsHeading);
+invitation.welcomeLists.forEach((l) => add(l.english));
+walkAll(pagesData);
 Object.values(galleryHeading).forEach(add);
 galleryCategories.forEach(add);
 galleryData.forEach((g) => add(g.caption));

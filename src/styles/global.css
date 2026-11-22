@@ -2,21 +2,24 @@
    GLOBAL — tokens, reset, typography, shared UI
    ========================================================= */
 :root {
-  /* Primary */
-  --ivory: #F8F4EC;
-  --gold: #D6B779;
+  /* Royal maroon palette. Dark sections use the wine shades, light sections the parchment shades. */
+  --ivory: #FAF6F0;          /* parchment */
+  --gold: #C5A059;           /* muted antique gold */
   --rose: #B98279;
   --sage: #89977F;
-  --forest: #34483C;
+  --forest: #4A0E17;         /* deep maroon (headings, buttons). Name kept so every section follows the palette */
   /* Secondary */
-  --blush: #EBD5D0;
-  --sand: #E9DFD0;
-  --white: #FFFDF9;
-  --charcoal: #292723;
-  /* Derived (AA-contrast variants for small text) */
-  --gold-deep: #876629;
-  --forest-deep: #25352B;
-  --muted: #5B574F;
+  --blush: #F0DDD8;
+  --sand: #F2EAE1;          /* warm beige */
+  --white: #FFFCF8;
+  --charcoal: #2C2224;
+  /* Derived */
+  --gold-deep: #85652A;      /* AA contrast on light backgrounds */
+  --forest-deep: #2B090D;    /* oxblood, dark sections */
+  --maroon-hero: #3D0C11;
+  --maroon-hero-2: #561C24;
+  --ink: #1A0508;            /* maroon black, footer */
+  --muted: #5F5255;
 
   --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --sans: "Manrope", "DM Sans", system-ui, -apple-system, sans-serif;
@@ -137,3 +140,7 @@ html[lang="hi"] body { line-height: 1.9; }
 html[lang="hi"] :is(main, .nav, .footer) * { letter-spacing: normal !important; text-transform: none !important; }
 html[lang="hi"] :is(.h2, .hero__name, .chapter__title, .ev__title, .venue__name, .closing__line, .closing__names, .faq__q span, .nav__sheet a) { line-height: 1.3; }
 html[lang="hi"] :is(.eyebrow, .btn, .cu__label) { font-size: .85em; }
+
+/* ----- inner pages: the banner replaces the first section's own heading ----- */
+.page > section:first-of-type > .container > .section-head { display: none; }
+.page > section:first-of-type { padding-top: clamp(40px, 6vw, 80px); }
