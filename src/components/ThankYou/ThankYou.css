@@ -1,0 +1,8 @@
+.thanks { background: var(--blush); }
+.thanks__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: clamp(36px, 5vw, 64px); }
+.thanks__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 980px; margin: 0 auto; }
+.thanks__grid li { position: relative; overflow: hidden; background: var(--white); }
+.thanks__grid img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.thanks__grid a { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; background: rgba(43, 9, 13, .88); color: var(--ivory); font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+.thanks__grid a:hover { background: var(--gold); color: var(--forest-deep); }
+@media (min-width: 800px) { .thanks__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }

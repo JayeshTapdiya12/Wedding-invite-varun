@@ -1,0 +1,24 @@
+.family { background: var(--ivory); }
+.fam__pair { display: grid; gap: 24px; max-width: 980px; margin: 0 auto; }
+.fam { display: grid; gap: 8px; justify-items: center; text-align: center; padding: clamp(28px, 5vw, 48px); background: var(--white); outline: 1px solid rgba(197, 160, 89, .7); outline-offset: -9px; }
+.fam__name { font-family: var(--serif); font-weight: 500; font-size: clamp(2.6rem, 7vw, 3.8rem); line-height: 1.05; color: var(--forest); }
+.fam__rule { width: 130px; color: var(--gold); }
+.fam p:not(.eyebrow) { max-width: 36ch; color: var(--muted); }
+
+.fam__lists { display: grid; gap: 18px; max-width: 1080px; margin: clamp(40px, 6vw, 72px) auto 0; }
+.wl { padding: 24px 26px; background: var(--sand); border-top: 2px solid var(--gold); }
+.wl h3 { font-family: var(--deva); font-weight: 600; font-size: 1.35rem; color: var(--forest); }
+.wl__en { margin-bottom: 10px; font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-deep); }
+.wl li { font-family: var(--deva); font-size: .98rem; line-height: 1.9; color: var(--charcoal); }
+
+.fam__contacts { margin-top: clamp(56px, 8vw, 104px); }
+.ct { display: grid; gap: 12px; max-width: 760px; margin: 0 auto; }
+.ct__row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 16px 20px; background: var(--white); border-left: 3px solid var(--gold); }
+.ct__row strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.45rem; color: var(--forest); line-height: 1.2; }
+.ct__row small { color: var(--muted); letter-spacing: .06em; }
+.ct__btns { display: flex; gap: 10px; }
+.ct__btns a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid var(--forest); color: var(--forest); font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; transition: background .3s, color .3s; }
+.ct__btns a:hover { background: var(--forest); color: var(--ivory); }
+
+@media (min-width: 760px) { .fam__pair { grid-template-columns: 1fr 1fr; } .fam__lists { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .fam__lists { grid-template-columns: repeat(3, 1fr); } }

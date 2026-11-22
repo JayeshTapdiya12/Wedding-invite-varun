@@ -1,0 +1,21 @@
+.guide { background: var(--blush); }
+.guide__tabs { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 48px); }
+.guide__tabs button { min-height: 48px; padding: 10px 26px; font-size: .74rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--forest); border: 1px solid rgba(74, 14, 23, .4); transition: background .4s var(--ease), color .4s var(--ease), border-color .4s; }
+.guide__tabs button:hover { border-color: var(--forest); }
+.guide__tabs button.on { background: var(--forest); color: var(--ivory); border-color: var(--forest); }
+.guide__grid { display: grid; gap: 18px; }
+.gcard { display: grid; gap: 6px; align-content: start; padding: clamp(22px, 3vw, 32px); background: var(--white); outline: 1px solid rgba(214, 183, 121, .7); outline-offset: -8px; transition: transform .5s var(--ease), box-shadow .5s; }
+.gcard:hover { transform: translateY(-4px); box-shadow: 0 26px 46px -30px rgba(41, 39, 35, .45); }
+.gcard small { font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); }
+.gcard h3 { font-family: var(--serif); font-weight: 500; font-size: 1.9rem; line-height: 1.1; color: var(--forest); }
+.gcard p { color: var(--muted); }
+.gcard a { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; width: fit-content; min-height: 44px; font-size: .74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--forest); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.gcard a:hover { color: var(--gold-deep); }
+.guide__tips { max-width: 760px; margin: clamp(36px, 5vw, 64px) auto 0; padding: clamp(22px, 4vw, 36px); border: 1px dashed var(--gold-deep); }
+.guide__tips h3 { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 500; font-size: 1.7rem; color: var(--forest); margin-bottom: 10px; }
+.guide__tips h3 svg { color: var(--gold-deep); }
+.guide__tips li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--charcoal); }
+.guide__tips li::before { content: "✦"; position: absolute; left: 0; color: var(--gold-deep); font-size: .8em; top: .3em; }
+.guide__note { margin-top: 14px; font-size: .85rem; font-style: italic; color: var(--muted); }
+@media (min-width: 700px) { .guide__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .guide__grid { grid-template-columns: repeat(4, 1fr); } .guide__grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); } }

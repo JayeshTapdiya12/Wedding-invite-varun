@@ -1,29 +1,25 @@
 {
-  "name": "brother-wedding",
+  "name": "varun-radhika-wedding",
   "private": true,
-  "version": "0.0.0",
+  "version": "10.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "links": "node scripts/make-links.mjs",
+    "qr": "node scripts/make-qr.mjs",
+    "reminders": "node scripts/make-reminders.mjs",
+    "i18n": "node scripts/i18n-audit.mjs"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.5",
-    "framer-motion": "^14.14.0",
-    "lucide-react": "^1.73.0",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.1.2",
-    "autoprefixer": "^10.6.2",
-    "oxlint": "^1.90.0",
-    "postcss": "^8.5.33",
-    "tailwindcss": "^4.3.5",
-    "vite": "^8.3.6"
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
   }
 }

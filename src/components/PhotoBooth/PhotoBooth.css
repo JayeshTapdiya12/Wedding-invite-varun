@@ -1,0 +1,13 @@
+.booth { background: var(--blush); }
+.booth__grid { display: grid; gap: 36px; align-items: center; justify-items: center; }
+.booth__preview canvas { width: min(100%, 360px); height: auto; box-shadow: 0 24px 60px rgba(41, 39, 35, .22); }
+.booth__controls { display: grid; gap: 22px; justify-items: start; width: min(100%, 360px); }
+.booth__pick { position: relative; cursor: pointer; }
+.booth__pick input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+.booth__frames { border: 0; display: grid; gap: 8px; }
+.booth__frames legend { font-size: .7rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 8px; }
+.booth__frames button { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid rgba(41, 39, 35, .18); background: var(--white); min-width: 220px; text-align: left; }
+.booth__frames button.on { border-color: var(--forest); box-shadow: inset 0 0 0 1px var(--forest); }
+.booth__frames i { width: 22px; height: 22px; border-radius: 50%; border: 2px solid; }
+.booth .btn:disabled { opacity: .45; cursor: not-allowed; }
+@media (min-width: 860px) { .booth__grid { grid-template-columns: auto 1fr; justify-items: start; gap: clamp(40px, 7vw, 110px); max-width: 860px; margin-inline: auto; } }

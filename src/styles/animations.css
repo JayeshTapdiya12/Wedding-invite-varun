@@ -1,0 +1,12 @@
+/* Shared keyframes (transform / opacity only, so they stay on the GPU) */
+
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marqueeRev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes scrollCue { 0% { transform: scaleY(0); transform-origin: top; } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes zoomIn { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+@keyframes slowSpin { to { transform: rotate(360deg); } }
